@@ -1,0 +1,23 @@
+spring:
+ application:
+  #对应config server中配置文件的{application}
+  name: spotuser
+ cloud:
+  config:
+    #访问config server的地址
+    uri: http://localhost:8895
+    #对应config server中配置文件的{profile}
+    profile: dev
+    #对应config server中配置文件的{label}
+    label: master
+
+  bus:
+       trace:
+          enabled: true
+
+ rabbitmq:
+    host: 47.93.20.204
+    port: 5672
+    username: admin
+    password: admin
+

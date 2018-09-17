@@ -1,0 +1,41 @@
+server:
+  port: 8895
+
+eureka:
+  instance:
+    preferIpAddress: true
+    instance-id: spotCloudConfig
+  client:
+    service-url:
+      defaultZone: http://${spring.security.user.name}:${spring.security.user.password}@localhost:8888/eureka/
+
+
+spring:
+ application:
+     name: spotCloudConfig
+ #profiles:
+ #   active: native #设置为本地启动的方式，而不是通过git
+ #cloud:
+ #   config:
+ #       server:
+ #         native:
+  #          searchLocations: classpath:/config
+ security:
+  basic:
+    enabled: true
+  user:
+    name: admin  # 用户名
+    password: Cube4302   # 用户密码
+  profiles:
+    active: native
+
+ rabbitmq:
+       host: 47.93.20.204
+       port: 5672
+       username: admin
+       password: admin
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'

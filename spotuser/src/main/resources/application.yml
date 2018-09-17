@@ -1,0 +1,20 @@
+server:
+  port: 8890
+
+eureka:
+  instance:
+    preferIpAddress: true
+    instance-id: spotuserService
+  client:
+    service-url:
+      defaultZone: http://${spring.security.user.name}:${spring.security.user.password}@localhost:8888/eureka/
+
+
+
+spring:
+ security:
+  basic:
+    enabled: false
+  user:
+    name: admin  # 用户名
+    password: Cube4302   # 用户密码
